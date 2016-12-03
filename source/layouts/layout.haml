@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no", name: "viewport"}/
+
+    %title= current_page.data.title || "Nick Pezza"
+    = favicon_tag 'logo.png'
+    = stylesheet_link_tag "//fonts.googleapis.com/css?family=Lato:100,300,400", :site, :swiper
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js", "//use.fontawesome.com/1118bc452f.js", :swiper, :all
+
+  %body{class: page_classes}
+    = yield

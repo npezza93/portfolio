@@ -1,0 +1,71 @@
+#projects
+  padding: 0px 30px
+  position: relative
+  z-index: 1
+  .skew
+    padding: 20px 0
+    margin: auto
+    max-width: 950px
+    &:before
+      content: ''
+      z-index: -1
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      background: #F7F7F7
+      -webkit-transform: skewY(-8deg)
+      -moz-transform: skewY(-8deg)
+      -ms-transform: skewY(-8deg)
+      -o-transform: skewY(-8deg)
+      transform: skewY(-8deg)
+      -webkit-backface-visibility: hidden
+      @media (min-width: 550px)
+        height: 103%
+      @media (min-width: 700px)
+        height: 106%
+      @media (min-width: 1000px)
+        height: 109%
+      @media (min-width: 1150px)
+        height: 112%
+      @media (min-width: 1300px)
+        height: 115%
+    h1
+      text-align: right
+      margin: 21px 0
+    .swiper-container
+      margin-top: 43px
+      max-height: 450px
+      .swiper-slide
+        max-width: 450px
+        max-height: 450px
+        .img
+          background-repeat: no-repeat
+          background-size: cover
+          padding-bottom: 80%
+          transition: all 0.3s ease
+          max-width: 450px
+          .opaque
+            width: 100%
+            max-width: 450px
+            padding-bottom: 80%
+            position: absolute
+            background-color: rgba(255,255,255,.6)
+            opacity: 0
+            transition: all 0.3s ease
+          p
+            opacity: 0
+            position: absolute
+            padding: 25px
+            transition: all 0.3s ease
+            margin: 0
+          &.active
+            .opaque
+              opacity: 1
+            p
+              opacity: 1
+        .learn-more
+          margin-top: 10px
+          color: #CBCBCB
+          margin-bottom: 20px
