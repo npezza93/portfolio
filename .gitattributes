@@ -1,4 +1,4 @@
 logo/* linguist-vendored
-source/stylesheets/normalize.min.css linguist-vendored
+source/stylesheets/normalize.css linguist-vendored
 source/stylesheets/swiper.min.css linguist-vendored
 source/javascripts/swiper.js linguist-vendored
