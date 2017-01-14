@@ -5,14 +5,85 @@
   height: 12px
   margin-left: 30px
   cursor: pointer
-  display: flex
+  display: none
   flex-direction: column
   justify-content: space-between
   position: fixed
+  @media (max-width: 600px)
+    display: flex
   div
     height: 2px
     background: #212121
     border-radius: 3px
+#hamburger-menu
+  @media (max-width: 600px)
+    display: block
+  position: fixed
+  left: 0
+  width: 100%
+  top: -250px
+  z-index: 10001
+  transition: all 400ms ease
+  display: none
+  i
+    position: absolute
+    right: 50px
+    font-size: 25px
+    top: 15px
+    cursor: pointer
+    z-index: 10003
+  &.active
+    top: 0px
+    &:before
+      top: -100px
+  &:before
+    content: ''
+    height: 400px
+    width: 100%
+    position: fixed
+    left: 0
+    top: -450px
+    background-color: #F7F7F7
+    -webkit-transform: skewY(-8deg)
+    -moz-transform: skewY(-8deg)
+    -ms-transform: skewY(-8deg)
+    -o-transform: skewY(-8deg)
+    transform: skewY(-8deg)
+    -webkit-backface-visibility: hidden
+    transition: all 350ms ease
+  ul
+    list-style: none
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 250px
+    margin: 0
+    padding: 0
+    z-index: 10002
+    position: relative
+    li
+      padding-top: 15px
+      padding-bottom: 15px
+      a
+        text-decoration: none
+        color: #212121
+
+#backdrop
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background-color: rgba(0,0,0, 0.6)
+  z-index: -2
+  overflow: none
+  opacity: 0
+  transition: all 350ms ease
+  &.active
+    z-index: 10000
+    opacity: 1
+
 #hire-me
   padding: 8px 25px
   background: #212121
