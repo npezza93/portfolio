@@ -12,7 +12,24 @@ document.addEventListener('DOMContentLoaded', function() {
   $("#hamburger").click(function() {
     $("#hamburger-menu, #backdrop").toggleClass("active");
   });
+
   $("#hamburger-menu i").click(function() {
     $("#hamburger-menu, #backdrop").toggleClass("active");
+  });
+
+  $(document).one("focus.expand", "textarea.expand", function() {
+    var savedValue = this.value;
+    this.value = "";
+    this.baseScrollHeight = this.scrollHeight;
+    this.value = savedValue;
+  }).on("input.expand", "textarea.expand", function() {
+    var minRows = this.dataset.minRows | 0;
+    var rows = void 0;
+    this.rows = minRows;
+    if (this.baseScrollHeight == undefined) {
+      $(this).trigger("focus");
+    }
+    rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 18);
+    this.rows = minRows + rows;
   });
 }, false);
