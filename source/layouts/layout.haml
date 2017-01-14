@@ -7,7 +7,7 @@
 
     %title= current_page.data.title || "Nick Pezza"
     = favicon_tag 'logo.png'
-    = stylesheet_link_tag "//fonts.googleapis.com/css?family=Lato:100,300,400", :site, :swiper
+    = stylesheet_link_tag "//fonts.googleapis.com/css?family=Lato:100,300,400", "normalize.min", :site, "swiper.min"
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js", "//use.fontawesome.com/1118bc452f.js", :swiper, :all
 
   %body{class: page_classes}
