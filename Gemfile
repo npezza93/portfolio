@@ -5,13 +5,17 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "pg"
 gem "pry-rails"
 gem "puma", "~> 3.0"
 gem "rails", "~> 5.0.1"
-gem "sqlite3"
 
 group :development, :test do
   gem "rubocop"
+end
+
+group :development do
+  gem "listen"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
