@@ -3,11 +3,7 @@ class EmailsController < ApplicationController
   def create
     @email = Email.new(email_params)
 
-    if @email.save
-      render json: @email
-    else
-      render json: nil
-    end
+    @email.save
   end
 
   private

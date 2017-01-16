@@ -5,6 +5,6 @@ class Email < ApplicationRecord
   private
 
   def send_email
-    puts self
+    EmailMailer.contact(id).deliver_now
   end
 end
