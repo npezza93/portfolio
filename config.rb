@@ -1,6 +1,4 @@
-class Contact
-  attr_accessor :name, :email, :message
-end
+require "lib/email"
 
 ###
 # Page options, layouts, aliases and proxies
