@@ -32,4 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
     rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 18);
     this.rows = minRows + rows;
   });
+
+  $("form").on("submit", function() {
+    $("form")[0].reset();
+    $("#notice").toggleClass("active");
+  });
 }, false);
