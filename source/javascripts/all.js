@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $("#hamburger-menu, #backdrop").toggleClass("active");
   });
 
-  $("#hamburger-menu i").click(function() {
+  $("#hamburger-menu i, #hamburger-menu a").click(function() {
     $("#hamburger-menu, #backdrop").toggleClass("active");
   });
 
