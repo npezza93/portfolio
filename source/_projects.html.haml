@@ -5,12 +5,4 @@
       projects
     .swiper-container
       .swiper-wrapper
-        - (1..4).each do |i|
-          .swiper-slide
-            .img{ style: "background-image: url('images/photo#{i}.jpeg');" }
-              .opaque
-              %p
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse massa neque, aliquet ac aliquet quis, rutrum at elit. Vivamus ipsum massa, lacinia vitae mauris sit amet, placerat eleifend est. Nullam tortor leo, tempus in blandit ut, pulvinar eu risus. Aliquam sollicitudin quis massa vitae euismod.
-            .learn-more
-              %i.fa.fa-chevron-right
-              Learn More
+        = partial "projects/calu_advisor"

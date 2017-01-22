@@ -6,7 +6,22 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   $(".learn-more").click(function() {
-    return $(this).parent().find(".img").toggleClass("active");
+    $(this).parent().parent().toggleClass("active");
+    $("header").css("z-index", 0);
+    $("body").css("overflow", "hidden");
+    $(this).parent().toggleClass("active");
+    $(this).parent().parent()[0].scrollTop = 0
+
+    return;
+  });
+
+  $(".close-project-desc").click(function() {
+    $(this).parent().toggleClass("active");
+    $(this).parent().parent().toggleClass("active");
+    $("header").css("z-index", 10);
+    $("body").css("overflow", "scroll");
+
+    return;
   });
 
   $("#hamburger").click(function() {

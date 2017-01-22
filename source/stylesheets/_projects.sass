@@ -37,35 +37,82 @@
     .swiper-container
       margin-top: 43px
       max-height: 450px
+      .swiper-wrapper.active
+        transform: none !important
       .swiper-slide
         max-width: 450px
         max-height: 450px
+        &.active
+          position: fixed
+          top: 0
+          left: 0
+          width: 100%
+          max-width: 100%
+          z-index: 1000
+          max-height: 100%
+          margin: 0 !important
+          background-color: #F7F7F7
+          overflow-y: scroll
+          .img
+            width: 100%
+            max-width: 1000px
+            padding-bottom: 43%
+            margin-left: auto
+            margin-right: auto
+          .text
+            display: block
+          h2
+            display: block
+          hr
+            border: 0
+            border-bottom: 1px solid #212121
+            width: 100px
+            display: block
+            margin-bottom: 35px
+          .learn-more
+            display: none
+          .mdi-arrow-left
+            display: block
         .img
           background-repeat: no-repeat
           background-size: cover
+          background-position: center center
           padding-bottom: 80%
-          transition: all 0.3s ease
+          transition: all 0.6s ease
           max-width: 450px
-          .opaque
-            width: 100%
-            max-width: 450px
-            padding-bottom: 80%
-            position: absolute
-            background-color: rgba(255,255,255,.6)
-            opacity: 0
-            transition: all 0.3s ease
+          &.contain
+            background-size: contain
+        .text
+          display: none
+          ul
+            max-width: 600px
+            margin: auto
+            padding-left: 175px
           p
-            opacity: 0
-            position: absolute
-            padding: 25px
-            transition: all 0.3s ease
-            margin: 0
-          &.active
-            .opaque
-              opacity: 1
-            p
-              opacity: 1
+            margin-left: auto
+            margin-right: auto
+            padding-left: 20px
+            padding-right: 20px
+            line-height: 1.15
+            letter-spacing: 0.5px
+            max-width: 600px
+        h2, hr
+          display: none
+          text-align: center
         .learn-more
           margin-top: 10px
           color: #CBCBCB
           margin-bottom: 20px
+          cursor: pointer
+        .mdi-arrow-left
+          position: absolute
+          top: 0
+          left: 0
+          font-size: 23px
+          color: #fff
+          left: 15px
+          top: 15px
+          display: none
+          cursor: pointer
+          &.dark
+            color: #CBCBCB
