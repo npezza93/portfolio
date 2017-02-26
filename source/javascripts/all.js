@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $(".learn-more").click(function() {
     $(this).parent().parent().toggleClass("active");
+    $(".skew").toggleClass("active");
     $("header").css("z-index", 0);
     $("body").css("overflow", "hidden");
     $(this).parent().toggleClass("active");
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
   $(".close-project-desc").click(function() {
     $(this).parent().toggleClass("active");
     $(this).parent().parent().toggleClass("active");
+    $(".skew").toggleClass("active");
     $("header").css("z-index", 10);
     $("body").css("overflow", "scroll");
 
