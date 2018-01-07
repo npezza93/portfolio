@@ -35,57 +35,82 @@
     h1
       text-align: right
       margin: 21px 0
-    .swiper-container
+    .container
       margin-top: 43px
-      max-height: 450px
-      .swiper-wrapper.active
-        transform: none !important
-      .swiper-slide
-        max-width: 450px
-        max-height: 450px
+      max-height: 400px
+      overflow-x: scroll
+      overflow-y: hidden
+      white-space: nowrap
+      @media (max-width: 450px)
+        width: 300px
+      .invisible
+        visibility: hidden
+      .content
+        position: absolute
+        top: 0
+        left: 0
+        width: 400px
+        height: 320px
+        background: #F7F7F7
+        overflow-y: hidden
+        overflow-x: hidden
+        transition: width .8s ease-in-out, height .8s ease-in-out
+        @media (max-width: 450px)
+          width: 300px
+          height: 288px
         &.active
-          position: fixed
-          top: 0
-          left: 0
-          width: 100%
-          max-width: 100%
-          z-index: 1000
-          max-height: 100%
-          margin: 0 !important
-          background-color: #F7F7F7
-          overflow-y: scroll
-          .img
-            width: 100%
-            max-width: 1000px
-            padding-bottom: 43%
-            margin-left: auto
-            margin-right: auto
-          .text
-            display: block
-          h2
-            display: block
+          width: 100vw
+          height: 100vh
+          z-index: 11
+      .slide
+        width: 400px
+        display: inline-block
+        position: relative
+        @media (max-width: 450px)
+          width: 300px
+        .content.open-transition
+          .text, h2, hr, .mdi-arrow-left
+            transition: opacity .3s ease-in-out .6s, visibility .3s ease-in-out .6s
+        .content.close-transition
+          .text, h2, hr, .mdi-arrow-left
+            transition: opacity .3s ease-in-out, visibility .3s ease-in-out
+        .text, h2, hr, .mdi-arrow-left
+          visibility: visible
+          opacity: 0
+        .content.fade-out
+          .text, h2, hr, .mdi-arrow-left
+            visibility: hidden !important
+            opacity: 0 !important
+        .content.active
+          .text, h2, hr, .mdi-arrow-left
+            visibility: visible
+            opacity: 1
           hr
             border: 0
             border-bottom: 1px solid #212121
             width: 100px
-            display: block
             margin-bottom: 35px
-          .learn-more
-            display: none
-          .mdi-arrow-left
-            display: block
+          .img
+            width: 100%
+            max-width: 1000px
+            margin-left: auto
+            margin-right: auto
         .img
           background-repeat: no-repeat
           background-size: cover
           background-position: center center
-          padding-bottom: 80%
           transition: all 0.6s ease
-          max-width: 450px
+          width: 400px
+          height: 320px
+          @media (max-width: 450px)
+            width: 300px
           &.contain
             background-size: contain
         .text
-          display: none
           padding-bottom: 40px
+          max-width: 600px
+          white-space: normal
+          margin: auto
           ul
             max-width: 550px
             margin: auto
@@ -100,7 +125,6 @@
             letter-spacing: 0.5px
             max-width: 550px
         h2, hr
-          display: none
           text-align: center
         .learn-more
           margin-top: 10px
@@ -115,7 +139,6 @@
           color: #fff
           left: 15px
           top: 15px
-          display: none
           cursor: pointer
           &.dark
             color: #CBCBCB

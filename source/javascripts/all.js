@@ -1,31 +1,50 @@
+$(document).on('click', '.learn-more', function() {
+  content = this.parentElement.querySelector(".content")
+  logoContainer = this.parentElement.querySelector(".invisible.img")
+
+  bounds = logoContainer.getBoundingClientRect()
+  content.style.position = "fixed"
+  content.style.top = bounds.top.toString() + "px"
+  content.style.left = bounds.left.toString() + "px"
+  content.classList.add('active')
+  document.querySelector('body').style['overflow-y'] = 'hidden'
+  $(content).animate(
+    { "left": 0, "top": 0 },
+    800,
+    function() {
+      content.classList.remove('open-transition')
+      content.classList.add('close-transition')
+      content.style.overflowY = 'scroll'
+    }
+  )
+});
+
+$(document).on('click', '.close-project-desc', function() {
+  slide = this.parentElement.parentElement
+  logoContainer = slide.querySelector(".invisible.img")
+  content = slide.querySelector(".content")
+  bounds = logoContainer.getBoundingClientRect()
+
+  content.style.height = bounds.height.toString() + "px"
+  content.style.width = bounds.width.toString() + "px"
+  content.style.overflowY = 'hidden'
+  content.classList.add('fade-out')
+
+  $(content).animate({
+    "left": bounds.left.toString() + "px",
+    "top": bounds.top.toString() + "px",
+  }, 800, function() {
+    content.querySelector('.img').classList.remove('active')
+    content.classList.remove('active')
+    $(content).removeAttr('style')
+    document.querySelector('body').style['overflow-y'] = 'scroll'
+    content.classList.remove('fade-out')
+    content.classList.add('open-transition')
+    content.classList.remove('close-transition')
+  })
+});
+
 document.addEventListener('DOMContentLoaded', function() {
-  var mySwiper = new Swiper('.swiper-container', {
-      speed: 400,
-      spaceBetween: 50,
-      slidesPerView: 'auto'
-  });
-
-  $(".learn-more").click(function() {
-    $(this).parent().parent().toggleClass("active");
-    $(".skew").toggleClass("active");
-    $("header").css("z-index", 0);
-    $("body").css("overflow", "hidden");
-    $(this).parent().toggleClass("active");
-    $(this).parent().parent()[0].scrollTop = 0
-
-    return;
-  });
-
-  $(".close-project-desc").click(function() {
-    $(this).parent().toggleClass("active");
-    $(this).parent().parent().toggleClass("active");
-    $(".skew").toggleClass("active");
-    $("header").css("z-index", 10);
-    $("body").css("overflow", "scroll");
-
-    return;
-  });
-
   $("#hamburger").click(function() {
     $("#hamburger-menu, #backdrop").toggleClass("active");
   });
