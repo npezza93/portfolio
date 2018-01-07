@@ -1,10 +1,11 @@
-.swiper-slide
-  .img.contain{ style: "background-image: url('images/eighty.png');" }
-  %h2 Eighty
-  %hr
-  .text
-    = partial "projects/text/eighty"
+.slide
+  .invisible.img.contain{ style: "background-image: url('images/eighty.png');" }
+  .content.open-transition
+    %i.mdi.mdi-arrow-left.close-project-desc.dark.invisible
+    .img.contain{ style: "background-image: url('images/eighty.png');" }
+    %h2.invisible Eighty
+    %hr.invisible
+    .text.invisible= partial "projects/text/eighty"
   .learn-more
     %i.fa.fa-chevron-right
     Learn More
-  %i.mdi.mdi-arrow-left.close-project-desc.dark
