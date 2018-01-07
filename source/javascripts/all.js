@@ -1,6 +1,10 @@
-$(document).on('click', '.learn-more', function() {
-  content = this.parentElement.querySelector(".content")
-  logoContainer = this.parentElement.querySelector(".invisible.img")
+$(document).on('click', '.slide', function() {
+  if (document.querySelector('.content.active')) {
+    return
+  }
+
+  content = this.querySelector('.content')
+  logoContainer = this.querySelector(".invisible.img")
 
   bounds = logoContainer.getBoundingClientRect()
   content.style.position = "fixed"
