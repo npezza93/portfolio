@@ -14,7 +14,7 @@ $(document).on('click', '.slide', function() {
   document.querySelector('body').style['overflow-y'] = 'hidden'
   $(content).animate(
     { "left": 0, "top": 0 },
-    800,
+    400,
     function() {
       content.classList.remove('open-transition')
       content.classList.add('close-transition')
@@ -37,7 +37,7 @@ $(document).on('click', '.close-project-desc', function() {
   $(content).animate({
     "left": bounds.left.toString() + "px",
     "top": bounds.top.toString() + "px",
-  }, 800, function() {
+  }, 400, function() {
     content.querySelector('.img').classList.remove('active')
     content.classList.remove('active')
     $(content).removeAttr('style')
