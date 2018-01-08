@@ -9,16 +9,13 @@
 #hamburger-menu
   %i.mdi.mdi-chevron-up
   %ul
-    %li= link_to "About", "#about-me"
+    %li= link_to "About", "#about"
     %li= link_to "Projects", "#projects"
     %li= link_to "Contact", "#contact"
 #backdrop
 
-#intro.section
+= partial "about"
 = partial "projects"
 = partial "contact"
--# = image_tag "logo.png", style: "max-width:100px;"
--# = image_tag "profile.jpg", style: "width:75px;border-radius: 50%;height:75px;object-fit:cover;"
 
-#notice
-  Contact email delivered successfully
+#notice Contact email delivered successfully
