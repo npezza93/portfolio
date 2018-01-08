@@ -1,19 +1,19 @@
 #contact
-  %h1.upcase
-    %span.slash #
-    contact
-    -# %span.slash &#10095;
-  = form_for Email.new, 'https://portfoliomailserver.herokuapp.com/emails', remote: true do |f|
-    = f.text_field :name, placeholder: "Your Name"
-    .input-border
-    = f.text_field :email, placeholder: "Your Email"
-    .input-border
-    %textarea.expand{ placeholder: "Your Message", name: "email[message]", data: { min: { rows: 2 } } }
-    .input-border
-    %button{ type: :submit, class: "submit"}
-      %i.fa.fa-paper-plane-o
-  .social
-    = link_to "https://github.com/npezza93", class: "social-container" do
-      %i.fa.fa-github
-    = link_to "https://www.linkedin.com/in/nick-pezza-02166668", class: "social-container" do
-      %i.fa.fa-linkedin
+  .contact-container
+    %h1.upcase
+      %span.slash #
+      contact
+    = form_for Email.new, 'https://portfoliomailserver.herokuapp.com/emails', remote: true do |f|
+      = f.text_field :name, placeholder: "Your Name"
+      .input-border
+      = f.text_field :email, placeholder: "Your Email"
+      .input-border
+      %textarea.expand{ placeholder: "Your Message", name: "email[message]", data: { min: { rows: 2 } } }
+      .input-border
+      %button{ type: :submit, class: "submit"}
+        %i.fa.fa-paper-plane-o
+    .social
+      = link_to "https://github.com/npezza93", class: "social-container" do
+        %i.fa.fa-github
+      = link_to "https://www.linkedin.com/in/nick-pezza-02166668", class: "social-container" do
+        %i.fa.fa-linkedin
