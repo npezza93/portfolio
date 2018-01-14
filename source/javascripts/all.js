@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
     this.rows = minRows + rows;
   });
 
-  $("form").on("submit", function() {
-    $("form")[0].reset();
+  $("form").on("submit", function(e) {
+    this.submit();
     $("#notice").toggleClass("active");
   });
 }, false);
