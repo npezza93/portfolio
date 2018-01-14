@@ -36,7 +36,7 @@
 I am a web developer who enjoys writing Ruby and Javascript. Some of my
 hobbies include running, biking, playing video games, and writing code.
 I currently work at
-<a href='n2pub.com'>N2 Publishing</a>
+<a href='https://www.n2pub.com'>N2 Publishing</a>
 in Wilmington, NC. If you're curious about getting some freelance work done,
 feel free to get in touch down below.
 </p>
@@ -178,11 +178,11 @@ It also has an accompanying desktop app for macOS built on Electron.</p>
 <span class='slash'>#</span>
 contact
 </h1>
-<form action="https://portfoliomailserver.herokuapp.com/emails" accept-charset="UTF-8" method="post" data-remote="true"><input type="hidden" name="authenticity_token" /><input type="text" name="email[name]" id="email_name" placeholder="Your Name" />
+<form action="https://portfoliomailserver.herokuapp.com/emails" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" /><input type="text" name="email[name]" id="email_name" placeholder="Your Name" required="required" />
 <div class='input-border'></div>
-<input type="text" name="email[email]" id="email_email" placeholder="Your Email" />
+<input type="email" name="email[email]" id="email_email" placeholder="Your Email" required="required" />
 <div class='input-border'></div>
-<textarea class='expand' data-min-rows='2' name='email[message]' placeholder='Your Message'></textarea>
+<textarea class='expand' data-min-rows='2' id='email_msg' name='email[message]' placeholder='Your Message' required></textarea>
 <div class='input-border'></div>
 <button class='submit' type='submit'>
 <i class='fa fa-paper-plane-o'></i>
