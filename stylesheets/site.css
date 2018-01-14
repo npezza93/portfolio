@@ -242,7 +242,8 @@
           background-position: center center;
           transition: all 0.4s ease;
           width: 400px;
-          height: 320px; }
+          height: 320px;
+          cursor: pointer; }
           @media (max-width: 450px) {
             #projects .skew .container .slide .img {
               width: 300px;
@@ -272,7 +273,8 @@
               width: 100%;
               max-width: 1000px;
               margin-left: auto;
-              margin-right: auto; }
+              margin-right: auto;
+              cursor: default; }
           #projects .skew .container .slide .content.open-transition .text, #projects .skew .container .slide .content.open-transition h2, #projects .skew .container .slide .content.open-transition hr, #projects .skew .container .slide .content.open-transition .mdi-arrow-left {
             transition: opacity 0.2s ease-in-out 0.2s, visibility 0.2s ease-in-out 0.2s; }
           #projects .skew .container .slide .content.close-transition .text, #projects .skew .container .slide .content.close-transition h2, #projects .skew .container .slide .content.close-transition hr, #projects .skew .container .slide .content.close-transition .mdi-arrow-left {
@@ -335,7 +337,7 @@
             top: 15px;
             cursor: pointer; }
             #projects .skew .container .slide .content .mdi-arrow-left.dark {
-              color: #CBCBCB; }
+              color: #B2B2B2; }
 
 #about {
   display: flex;
