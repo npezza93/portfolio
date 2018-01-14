@@ -337,7 +337,7 @@
             top: 15px;
             cursor: pointer; }
             #projects .skew .container .slide .content .mdi-arrow-left.dark {
-              color: #B2B2B2; }
+              color: #000; }
 
 #about {
   display: flex;
