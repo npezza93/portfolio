@@ -10,6 +10,14 @@
     = favicon_tag 'logo.png'
     = stylesheet_link_tag "//fonts.googleapis.com/css?family=Lato:100,300,400", :normalize, :site,  "//cdn.materialdesignicons.com/1.7.22/css/materialdesignicons.min.css"
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js", "//use.fontawesome.com/1118bc452f.js", :all
+    / Global site tag (gtag.js) - Google Analytics
+    %script{ async: "", src: "https://www.googletagmanager.com/gtag/js?id=UA-42017922-2" }
+    :javascript
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-42017922-2');
 
   %body{class: page_classes}
     = yield
