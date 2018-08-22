@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "source/javascripts/all.js",
+  "repository": "https://github.com/npezza93/npezza93.github.io",
+  "author": "Nick Pezza <npezza93@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.17.0",
+    "webpack-cli": "^3.1.0"
+  },
+  "scripts": {
+    "build": "webpack"
+  }
+}
