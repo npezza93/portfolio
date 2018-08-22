@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './source/javascripts/all.js',
+  entry: './source/javascript/index.js',
   output: {
     path: __dirname + '/dist',
     filename: 'javascripts/[name].js'
