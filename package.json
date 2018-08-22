@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "main": "source/javascript/index.js",
+  "main": "source/javascripts/index.js",
   "repository": "https://github.com/npezza93/npezza93.github.io",
   "author": "Nick Pezza <npezza93@gmail.com>",
   "license": "MIT",
