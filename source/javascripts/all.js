@@ -1,3 +1,5 @@
+const $ = require('jquery');
+
 $(document).on('click', '.slide', function() {
   if (document.querySelector('.content.active')) {
     return
