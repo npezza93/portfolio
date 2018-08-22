@@ -2,6 +2,61 @@
 # yarn lockfile v1
 
 
+"@material/animation@^0.34.0":
+  version "0.34.0"
+  resolved "https://registry.yarnpkg.com/@material/animation/-/animation-0.34.0.tgz#a99cc9dabf7d0179b4da9a0aaa1575c4d1513823"
+
+"@material/base@^0.35.0":
+  version "0.35.0"
+  resolved "https://registry.yarnpkg.com/@material/base/-/base-0.35.0.tgz#8640c2da385e8cc393ff56153c5a319f5a7704cb"
+
+"@material/ripple@^0.38.1":
+  version "0.38.1"
+  resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-0.38.1.tgz#74e61ed28e7680e0fd990fa50fa1949da456b3cb"
+  dependencies:
+    "@material/animation" "^0.34.0"
+    "@material/base" "^0.35.0"
+    "@material/theme" "^0.38.0"
+
+"@material/rtl@^0.36.0":
+  version "0.36.0"
+  resolved "https://registry.yarnpkg.com/@material/rtl/-/rtl-0.36.0.tgz#a81b587981dc6e09f51e26da8a7447f89358ccd5"
+
+"@material/tab-indicator@^0.38.0":
+  version "0.38.0"
+  resolved "https://registry.yarnpkg.com/@material/tab-indicator/-/tab-indicator-0.38.0.tgz#8cb0f364af561a0e0311530247d2116c3ff88f49"
+  dependencies:
+    "@material/animation" "^0.34.0"
+    "@material/base" "^0.35.0"
+    "@material/theme" "^0.38.0"
+
+"@material/tab-scroller@^0.38.1":
+  version "0.38.1"
+  resolved "https://registry.yarnpkg.com/@material/tab-scroller/-/tab-scroller-0.38.1.tgz#79a4d8aa58981a61bba25e5a2e0b494ca2920473"
+  dependencies:
+    "@material/animation" "^0.34.0"
+    "@material/base" "^0.35.0"
+    "@material/tab" "^0.38.1"
+
+"@material/tab@^0.38.1":
+  version "0.38.1"
+  resolved "https://registry.yarnpkg.com/@material/tab/-/tab-0.38.1.tgz#1de846a222d4adbe29ee5b96aad1561924f734fc"
+  dependencies:
+    "@material/base" "^0.35.0"
+    "@material/ripple" "^0.38.1"
+    "@material/rtl" "^0.36.0"
+    "@material/tab-indicator" "^0.38.0"
+    "@material/theme" "^0.38.0"
+    "@material/typography" "^0.38.0"
+
+"@material/theme@^0.38.0":
+  version "0.38.0"
+  resolved "https://registry.yarnpkg.com/@material/theme/-/theme-0.38.0.tgz#c1a2247eba4af2ba47da4456921ab420869fda55"
+
+"@material/typography@^0.38.0":
+  version "0.38.0"
+  resolved "https://registry.yarnpkg.com/@material/typography/-/typography-0.38.0.tgz#fff8e4f25c5ef7b0afb5ed414bc700981e431703"
+
 "@webassemblyjs/ast@1.5.13":
   version "1.5.13"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.5.13.tgz#81155a570bd5803a30ec31436bc2c9c0ede38f25"

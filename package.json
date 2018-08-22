@@ -6,6 +6,7 @@
   "author": "Nick Pezza <npezza93@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@material/tab-scroller": "^0.38.1",
     "jquery": "^3.3.1",
     "webpack": "^4.17.0",
     "webpack-cli": "^3.1.0"
