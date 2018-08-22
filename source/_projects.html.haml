@@ -3,12 +3,14 @@
     %h1.upcase
       %span.slash #
       projects
-    .container
-      = partial "projects/n2"
-      = partial "projects/archipelago"
-      = partial "projects/open_source"
-      = partial "projects/calu_advisor"
-      = partial "projects/eighty"
+    .mdc-tab-scroller
+      .mdc-tab-scroller__scroll-area
+        .mdc-tab-scroller__scroll-content.container
+          = partial "projects/n2"
+          = partial "projects/archipelago"
+          = partial "projects/open_source"
+          = partial "projects/calu_advisor"
+          = partial "projects/eighty"
 
     = link_to "resume.pdf", id: "resume-link" do
       %i.mdi.mdi-download

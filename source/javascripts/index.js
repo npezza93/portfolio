@@ -1,14 +1,15 @@
 const $ = require('jquery');
+import { MDCTabScroller } from '@material/tab-scroller';
 
 $(document).on('click', '.slide', function() {
   if (document.querySelector('.content.active')) {
     return
   }
 
-  content = this.querySelector('.content')
-  logoContainer = this.querySelector(".invisible.img")
+  let content = this.querySelector('.content')
+  let logoContainer = this.querySelector(".invisible.img")
 
-  bounds = logoContainer.getBoundingClientRect()
+  let bounds = logoContainer.getBoundingClientRect()
   content.style.position = "fixed"
   content.style.top = bounds.top.toString() + "px"
   content.style.left = bounds.left.toString() + "px"
@@ -51,6 +52,8 @@ $(document).on('click', '.close-project-desc', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+  const tabScroller = new MDCTabScroller(document.querySelector('.mdc-tab-scroller'));
+
   $("#hamburger").click(function() {
     $("#hamburger-menu, #backdrop").toggleClass("active");
   });
