@@ -61,7 +61,7 @@
       right: 25px;
       border: none;
       cursor: pointer; }
-      #contact form .submit i {
+      #contact form .submit svg {
         color: #fff;
         position: absolute;
         left: 13px;
@@ -79,13 +79,16 @@
       border-radius: 50%;
       position: relative;
       margin: 0 10px; }
-      #contact .social .social-container i {
-        font-size: 25px;
+      #contact .social .social-container svg {
         position: absolute;
-        top: 7px;
-        left: 9px;
         color: #fff; }
-        #contact .social .social-container i.fa-linkedin {
+        #contact .social .social-container svg.fa-github {
+          font-size: 28px;
+          top: 6px;
+          left: 6px; }
+        #contact .social .social-container svg.fa-linkedin-in {
+          font-size: 25px;
+          top: 7px;
           left: 10px; }
 
 #hamburger {
@@ -236,17 +239,15 @@
       -webkit-backface-visibility: hidden; }
     #projects .skew h1 {
       text-align: right; }
+    @media (max-width: 450px) {
+      #projects .skew .mdc-tab-scroller {
+        margin-left: -30px;
+        margin-right: -30px; } }
     #projects .skew .container {
       margin-top: 45px;
       max-height: 400px;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      white-space: nowrap; }
-      @media (max-width: 450px) {
-        #projects .skew .container {
-          margin-left: -30px;
-          margin-right: -30px;
-          padding-left: 10px; } }
+      white-space: nowrap;
+      overflow-y: hidden; }
       #projects .skew .container .slide {
         width: 400px;
         display: inline-block;
@@ -313,7 +314,7 @@
               max-width: 550px;
               margin: auto;
               padding-right: 20px;
-              padding-left: 80px;
+              padding-left: 55px;
               line-height: 1.35;
               font-size: 13px; }
               #projects .skew .container .slide .content .text ul ul {
@@ -388,6 +389,49 @@
       color: #212121;
       font-weight: 600;
       text-decoration: underline; }
+
+.mdc-tab-scroller {
+  overflow-y: hidden; }
+
+.mdc-tab-scroller__test {
+  position: absolute;
+  top: -9999px;
+  width: 100px;
+  height: 100px;
+  overflow-x: scroll; }
+
+.mdc-tab-scroller__scroll-area {
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  overflow-x: hidden; }
+
+.mdc-tab-scroller__scroll-area::-webkit-scrollbar,
+.mdc-tab-scroller__test::-webkit-scrollbar {
+  display: none; }
+
+.mdc-tab-scroller__scroll-area--scroll {
+  overflow-x: scroll; }
+
+.mdc-tab-scroller__scroll-content {
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  transform: none; }
+
+.mdc-tab-scroller--align-start .mdc-tab-scroller__scroll-content {
+  justify-content: flex-start; }
+
+.mdc-tab-scroller--align-end .mdc-tab-scroller__scroll-content {
+  justify-content: flex-end; }
+
+.mdc-tab-scroller--align-center .mdc-tab-scroller__scroll-content {
+  justify-content: center; }
+
+.mdc-tab-scroller--animating .mdc-tab-scroller__scroll-area {
+  -webkit-overflow-scrolling: auto; }
+
+.mdc-tab-scroller--animating .mdc-tab-scroller__scroll-content {
+  transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1); }
 
 body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
