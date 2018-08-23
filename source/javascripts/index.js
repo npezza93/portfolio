@@ -27,10 +27,10 @@ $(document).on('click', '.slide', function() {
 });
 
 $(document).on('click', '.close-project-desc', function() {
-  slide = this.parentElement.parentElement
-  logoContainer = slide.querySelector(".invisible.img")
-  content = slide.querySelector(".content")
-  bounds = logoContainer.getBoundingClientRect()
+  let slide = this.parentElement.parentElement
+  let logoContainer = slide.querySelector(".invisible.img")
+  let content = slide.querySelector(".content")
+  let bounds = logoContainer.getBoundingClientRect()
 
   content.style.height = bounds.height.toString() + "px"
   content.style.width = bounds.width.toString() + "px"
