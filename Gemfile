@@ -8,8 +8,8 @@ end
 
 gem "pg"
 gem "pry-rails"
-gem "puma", "~> 3.0"
-gem "rails", "~> 5.0.1"
+gem "puma"
+gem "rails"
 
 group :development, :test do
   gem "rubocop"
