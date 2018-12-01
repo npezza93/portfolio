@@ -10,7 +10,7 @@
       .input-border
       %textarea.expand{ id: "email_msg", placeholder: "Your Message", name: "email[message]", required: true, data: { min: { rows: 2 } } }
       .input-border
-      %button{ type: :submit, class: "submit"}
+      %button{ type: :submit, class: "submit", "aria-label" => "Contact" }
         %i.far.fa-paper-plane
     .social
       = link_to "https://github.com/npezza93", class: "social-container" do

@@ -1,0 +1,19 @@
+{
+  "name": "Nick Pezza",
+  "icons": [
+    {
+      "src": "/source/images/profile.jpg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/source/images/profile.jpg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
