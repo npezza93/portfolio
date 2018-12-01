@@ -3,13 +3,16 @@
   %head
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{charset: "utf-8"}/
-    %meta{content: "width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no", name: "viewport"}/
+    %meta{content: "width=device-width,initial-scale=1.0", name: "viewport"}/
     %meta{ name: "description", content: "I am a web developer who enjoys writing Ruby and Javascript. Some of my hobbies include running, biking, playing video games, and writing code. I currently work at N2 Publishing in Wilmington, NC." }
 
     %title= current_page.data.title || "Nick Pezza"
     = favicon_tag 'logo.png'
     = stylesheet_link_tag "//fonts.googleapis.com/css?family=Lato:100,300,400", :normalize, :site,  "//cdn.materialdesignicons.com/1.7.22/css/materialdesignicons.min.css"
-    = javascript_include_tag "https://use.fontawesome.com/releases/v5.2.0/js/all.js", :main
+    = stylesheet_link_tag :site
+    = javascript_include_tag "https://use.fontawesome.com/releases/v5.2.0/js/all.js", :main, defer: true, async: true
+    %meta{ name: "theme-color", content: "#fff" }
+
     / Global site tag (gtag.js) - Google Analytics
     %script{ async: "", src: "https://www.googletagmanager.com/gtag/js?id=UA-42017922-2" }
     :javascript
