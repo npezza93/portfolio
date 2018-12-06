@@ -1,6 +1,10 @@
 const $ = require('jquery');
 import { MDCTabScroller } from '@material/tab-scroller';
 
+window.addEventListener('load', function() {
+  new MDCTabScroller(document.querySelector('.mdc-tab-scroller'))
+})
+
 $(document).on('click', '.slide', function() {
   if (document.querySelector('.content.active')) {
     return
@@ -79,7 +83,3 @@ $(document).one('focus.expand', 'textarea.expand', function() {
   rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 18);
   this.rows = minRows + rows;
 });
-
-window.addEventListener('load', function(event) {
-  new MDCTabScroller(document.querySelector('.mdc-tab-scroller'))
-})
