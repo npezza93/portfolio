@@ -80,4 +80,6 @@ $(document).one('focus.expand', 'textarea.expand', function() {
   this.rows = minRows + rows;
 });
 
-new MDCTabScroller(document.querySelector('.mdc-tab-scroller'));
+document.addEventListener('DOMContentLoaded', function() {
+  new MDCTabScroller(document.querySelector('.mdc-tab-scroller'))
+})
