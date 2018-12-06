@@ -405,8 +405,7 @@
   display: flex;
   overflow-x: hidden; }
 
-.mdc-tab-scroller__scroll-area::-webkit-scrollbar,
-.mdc-tab-scroller__test::-webkit-scrollbar {
+.mdc-tab-scroller__scroll-area::-webkit-scrollbar, .mdc-tab-scroller__test::-webkit-scrollbar {
   display: none; }
 
 .mdc-tab-scroller__scroll-area--scroll {
