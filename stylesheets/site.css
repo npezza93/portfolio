@@ -348,12 +348,11 @@
             font-family: Fira Code; }
           #projects .skew .container .slide .content .mdi-arrow-left {
             position: absolute;
-            top: 0;
             left: 0;
             font-size: 23px;
             color: #fff;
             left: 15px;
-            top: 15px;
+            top: 35px;
             cursor: pointer; }
             #projects .skew .container .slide .content .mdi-arrow-left.dark {
               color: #000; }
@@ -434,7 +433,8 @@
 
 body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1em; }
+  font-size: 1em;
+  background: #fff; }
 
 header {
   display: flex;
