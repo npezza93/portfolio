@@ -51,35 +51,33 @@ $(document).on('click', '.close-project-desc', function() {
   })
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const tabScroller = new MDCTabScroller(document.querySelector('.mdc-tab-scroller'));
+$(document).on('click', '#hamburger', function() {
+  $('#hamburger-menu, #backdrop').toggleClass('active')
+})
 
-  $("#hamburger").click(function() {
-    $("#hamburger-menu, #backdrop").toggleClass("active");
-  });
+$(document).on('click', '#hamburger-menu i, #hamburger-menu a', function() {
+  $('#hamburger-menu, #backdrop').toggleClass('active')
+})
 
-  $("#hamburger-menu i, #hamburger-menu a").click(function() {
-    $("#hamburger-menu, #backdrop").toggleClass("active");
-  });
+$(document).on('submit', 'form', function(e) {
+  this.submit()
+  $('#notice').toggleClass('active')
+})
 
-  $(document).one("focus.expand", "textarea.expand", function() {
-    var savedValue = this.value;
-    this.value = "";
-    this.baseScrollHeight = this.scrollHeight;
-    this.value = savedValue;
-  }).on("input.expand", "textarea.expand", function() {
-    var minRows = this.dataset.minRows | 0;
-    var rows = void 0;
-    this.rows = minRows;
-    if (this.baseScrollHeight == undefined) {
-      $(this).trigger("focus");
-    }
-    rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 18);
-    this.rows = minRows + rows;
-  });
+$(document).one('focus.expand', 'textarea.expand', function() {
+  var savedValue = this.value;
+  this.value = '';
+  this.baseScrollHeight = this.scrollHeight;
+  this.value = savedValue;
+}).on('input.expand', 'textarea.expand', function() {
+  var minRows = this.dataset.minRows | 0;
+  var rows = void 0;
+  this.rows = minRows;
+  if (this.baseScrollHeight == undefined) {
+    $(this).trigger('focus');
+  }
+  rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 18);
+  this.rows = minRows + rows;
+});
 
-  $("form").on("submit", function(e) {
-    this.submit();
-    $("#notice").toggleClass("active");
-  });
-}, false);
+new MDCTabScroller(document.querySelector('.mdc-tab-scroller'));
