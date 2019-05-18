@@ -14,7 +14,7 @@
     font-weight: 600
     text-decoration: underline
     font-feature-settings: 'calt' 1
-    font-family: Fira Code
+    font-family: Inter
     line-height: 1.35
     letter-spacing: 0.5px
     i
@@ -45,7 +45,12 @@
       transform: skewY(-8deg)
       -webkit-backface-visibility: hidden
     h1
-      text-align: right
+      display: flex
+      flex-direction: row
+      justify-content: flex-end
+      align-items: center
+      .slash
+        margin-right: 10px
     @media (max-width: 450px)
       .mdc-tab-scroller
         margin-left: -30px
@@ -116,7 +121,7 @@
             max-width: 600px
             white-space: normal
             margin: auto
-            font-family: Fira Code
+            font-family: Inter
             ul
               max-width: 550px
               margin: auto
@@ -152,7 +157,7 @@
             text-align: center
             white-space: normal
             font-weight: 500
-            font-family: Fira Code
+            font-family: Inter
           .mdi-arrow-left
             position: absolute
             left: 0
