@@ -1,4 +1,4 @@
-@import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
+@import url(https://rsms.me/inter/inter.css);
 #contact {
   margin: auto;
   margin-top: 20%;
@@ -9,6 +9,13 @@
   flex-direction: column;
   justify-content: center;
   min-height: 600px; }
+  #contact h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; }
+    #contact h1 .slash {
+      margin-right: 10px; }
   #contact form {
     padding: 0 30px;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -27,10 +34,10 @@
       outline: none;
       font-weight: 400;
       transition: transform 250ms ease-in-out;
-      font-family: Fira Code; }
+      font-family: Inter; }
     #contact form .input-border:after {
       display: block;
-      content: "";
+      content: '';
       border-bottom: solid 1px #cbcbcb;
       transform: scaleX(0);
       transition: transform 250ms ease-in-out;
@@ -48,7 +55,7 @@
       font-weight: 400;
       transition: transform 250ms ease-in-out;
       resize: none;
-      font-family: Fira Code; }
+      font-family: Inter; }
     #contact form textarea + .input-border {
       margin-top: -3px; }
     #contact form .submit {
@@ -131,7 +138,7 @@
     #hamburger-menu.active:before {
       top: -100px; }
   #hamburger-menu:before {
-    content: "";
+    content: '';
     height: 400px;
     width: 100%;
     position: fixed;
@@ -197,22 +204,36 @@
   position: relative; }
   #projects #n2 li {
     margin: 16px 0; }
-  #projects #resume-link {
+  #projects #resume {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    font-size: 18px;
-    margin-top: 10px;
-    color: #212121;
-    font-weight: 600;
-    text-decoration: underline;
-    font-feature-settings: "calt" 1;
-    font-family: Fira Code;
-    line-height: 1.35;
-    letter-spacing: 0.5px; }
-    #projects #resume-link i {
-      margin-right: 8px;
-      padding-top: 7px; }
+    justify-content: center;
+    height: 100%; }
+    #projects #resume .resume-container {
+      position: relative;
+      height: 275px;
+      width: 275px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      font-weight: 200;
+      cursor: pointer;
+      text-decoration: none;
+      color: #000; }
+      #projects #resume .resume-container span {
+        z-index: 2; }
+      #projects #resume .resume-container svg {
+        position: absolute;
+        width: 200px;
+        z-index: 0; }
+        #projects #resume .resume-container svg g {
+          transition: all 250ms linear;
+          fill: #e5e5e5; }
+      #projects #resume .resume-container:hover g {
+        fill: #f0f0f0; }
   #projects .skew {
     margin: auto;
     max-width: 950px;
@@ -222,7 +243,7 @@
     height: 100vh;
     min-height: 600px; }
     #projects .skew:before {
-      content: "";
+      content: '';
       z-index: -1;
       position: absolute;
       left: 0;
@@ -237,8 +258,13 @@
       -o-transform: skewY(-8deg);
       transform: skewY(-8deg);
       -webkit-backface-visibility: hidden; }
-    #projects .skew h1 {
-      text-align: right; }
+    #projects .skew h1.section-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center; }
+      #projects .skew h1.section-header .slash {
+        margin-right: 10px; }
     @media (max-width: 450px) {
       #projects .skew .mdc-tab-scroller {
         margin-left: -30px;
@@ -259,7 +285,7 @@
           background-repeat: no-repeat;
           background-size: contain;
           background-position: center center;
-          transition: all 0.4s ease;
+          transition: all .4s ease;
           width: 400px;
           height: 320px;
           cursor: pointer; }
@@ -276,7 +302,7 @@
           background: #F7F7F7;
           overflow-y: hidden;
           overflow-x: hidden;
-          transition: width 0.4s ease-in-out, height 0.4s ease-in-out; }
+          transition: width .4s ease-in-out, height .4s ease-in-out; }
           @media (max-width: 450px) {
             #projects .skew .container .slide .content {
               width: 300px;
@@ -285,7 +311,7 @@
             width: 100vw;
             height: 100vh;
             z-index: 11; }
-            #projects .skew .container .slide .content.active .text, #projects .skew .container .slide .content.active h2, #projects .skew .container .slide .content.active hr, #projects .skew .container .slide .content.active .mdi-arrow-left {
+            #projects .skew .container .slide .content.active .text, #projects .skew .container .slide .content.active h1.project-name, #projects .skew .container .slide .content.active hr, #projects .skew .container .slide .content.active svg.close-project-desc {
               visibility: visible;
               opacity: 1; }
             #projects .skew .container .slide .content.active .img {
@@ -294,14 +320,14 @@
               margin-left: auto;
               margin-right: auto;
               cursor: default; }
-          #projects .skew .container .slide .content.open-transition .text, #projects .skew .container .slide .content.open-transition h2, #projects .skew .container .slide .content.open-transition hr, #projects .skew .container .slide .content.open-transition .mdi-arrow-left {
-            transition: opacity 0.2s ease-in-out 0.2s, visibility 0.2s ease-in-out 0.2s; }
-          #projects .skew .container .slide .content.close-transition .text, #projects .skew .container .slide .content.close-transition h2, #projects .skew .container .slide .content.close-transition hr, #projects .skew .container .slide .content.close-transition .mdi-arrow-left {
-            transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; }
-          #projects .skew .container .slide .content.fade-out .text, #projects .skew .container .slide .content.fade-out h2, #projects .skew .container .slide .content.fade-out hr, #projects .skew .container .slide .content.fade-out .mdi-arrow-left {
+          #projects .skew .container .slide .content.open-transition .text, #projects .skew .container .slide .content.open-transition h1.project-name, #projects .skew .container .slide .content.open-transition hr, #projects .skew .container .slide .content.open-transition svg.close-project-desc {
+            transition: opacity .2s ease-in-out .2s, visibility .2s ease-in-out .2s; }
+          #projects .skew .container .slide .content.close-transition .text, #projects .skew .container .slide .content.close-transition h1.project-name, #projects .skew .container .slide .content.close-transition hr, #projects .skew .container .slide .content.close-transition svg.close-project-desc {
+            transition: opacity .2s ease-in-out, visibility .2s ease-in-out; }
+          #projects .skew .container .slide .content.fade-out .text, #projects .skew .container .slide .content.fade-out h1.project-name, #projects .skew .container .slide .content.fade-out hr, #projects .skew .container .slide .content.fade-out svg.close-project-desc {
             visibility: hidden !important;
             opacity: 0 !important; }
-          #projects .skew .container .slide .content .text, #projects .skew .container .slide .content h2, #projects .skew .container .slide .content hr, #projects .skew .container .slide .content .mdi-arrow-left {
+          #projects .skew .container .slide .content .text, #projects .skew .container .slide .content h1.project-name, #projects .skew .container .slide .content hr, #projects .skew .container .slide .content svg.close-project-desc {
             visibility: visible;
             opacity: 0; }
           #projects .skew .container .slide .content .text {
@@ -309,14 +335,15 @@
             max-width: 600px;
             white-space: normal;
             margin: auto;
-            font-family: Fira Code; }
+            font-family: Inter; }
             #projects .skew .container .slide .content .text ul {
               max-width: 550px;
               margin: auto;
               padding-right: 20px;
               padding-left: 55px;
               line-height: 1.35;
-              font-size: 13px; }
+              font-size: 17px;
+              font-weight: 300; }
               #projects .skew .container .slide .content .text ul ul {
                 padding-left: 20px;
                 list-style-type: none;
@@ -327,47 +354,62 @@
               padding-left: 20px;
               padding-right: 20px;
               line-height: 1.35;
-              font-size: 13px;
+              font-size: 17px;
+              font-weight: 300;
               letter-spacing: 0.5px;
               max-width: 550px;
               text-indent: 25px; }
             #projects .skew .container .slide .content .text a {
               color: #212121;
-              font-weight: 600;
+              font-weight: 500;
               text-decoration: underline; }
           #projects .skew .container .slide .content hr {
             text-align: center;
             border: 0;
-            border-bottom: 1px solid #212121;
+            border-bottom: 1px solid #c6c6c6;
             width: 100px;
             margin-bottom: 35px; }
-          #projects .skew .container .slide .content h2 {
+          #projects .skew .container .slide .content h1.project-name {
             text-align: center;
             white-space: normal;
-            font-weight: 500;
-            font-family: Fira Code; }
-          #projects .skew .container .slide .content .mdi-arrow-left {
+            letter-spacing: 2px;
+            font-weight: 400;
+            font-family: Inter; }
+          #projects .skew .container .slide .content svg.close-project-desc {
             position: absolute;
             left: 0;
             font-size: 23px;
             color: #fff;
             left: 15px;
             top: 35px;
-            cursor: pointer; }
-            #projects .skew .container .slide .content .mdi-arrow-left.dark {
-              color: #000; }
+            cursor: pointer;
+            width: 11px; }
 
 #about {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   margin-bottom: 30px;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
-  max-width: 450px;
+  max-width: 550px;
   margin: auto;
-  min-height: 600px;
-  padding: 0px 30px; }
+  padding: 0px 30px 0px 30px; }
+  @media (max-width: 450px) {
+    #about {
+      padding-top: 100px; } }
+  @media (max-height: 650px) {
+    #about {
+      padding-top: 100px; } }
+  #about h1 {
+    letter-spacing: 2px;
+    line-height: 1.25; }
+    #about h1 b {
+      font-weight: 500; }
+  #about hr {
+    border: 0;
+    border-bottom: 1px solid #c6c6c6;
+    width: 100px; }
   #about .profile {
     background-image: url("../images/profile.jpg");
     width: 175px;
@@ -378,15 +420,16 @@
     background-position: center; }
   #about p {
     font-feature-settings: "calt" 1;
-    font-family: Fira Code;
     margin-bottom: 70px;
-    margin-top: 0;
-    font-size: 13px;
+    margin-top: 30px;
     line-height: 1.35;
-    letter-spacing: 0.5px; }
+    letter-spacing: 0.5px;
+    font-family: Inter;
+    font-size: 17px;
+    font-weight: 300; }
     #about p a {
       color: #212121;
-      font-weight: 600;
+      font-weight: 500;
       text-decoration: underline; }
 
 .mdc-tab-scroller {
@@ -432,7 +475,7 @@
   transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1); }
 
 body {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   background: #fff; }
 
@@ -464,8 +507,7 @@ h1 {
     font-size: 44px;
     font-weight: 400;
     margin-right: -5px;
-    color: #CBCBCB;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    color: #CBCBCB; }
 
 #notice {
   position: fixed;
