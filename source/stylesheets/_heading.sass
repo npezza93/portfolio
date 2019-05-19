@@ -12,7 +12,7 @@
   @media (max-width: 600px)
     display: flex
   div
-    height: 2px
+    height: 1.5px
     background: #212121
     border-radius: 3px
 #hamburger-menu
@@ -25,13 +25,15 @@
   z-index: 10001
   transition: all 400ms ease
   display: none
-  i
+  svg
+    width: 10px
     position: absolute
+    visibility: visible
     right: 50px
-    font-size: 25px
-    top: 15px
+    top: 25px
     cursor: pointer
     z-index: 10003
+    transform: rotate(90deg)
   &.active
     top: 0px
     &:before
@@ -68,6 +70,8 @@
       a
         text-decoration: none
         color: #212121
+        font-size: 17px
+        font-weight: 300
 
 #backdrop
   position: fixed

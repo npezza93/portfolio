@@ -59,7 +59,7 @@ $(document).on('click', '#hamburger', function() {
   $('#hamburger-menu, #backdrop').toggleClass('active')
 })
 
-$(document).on('click', '#hamburger-menu i, #hamburger-menu a', function() {
+$(document).on('click', '#hamburger-menu svg, #hamburger-menu a', function() {
   $('#hamburger-menu, #backdrop').toggleClass('active')
 })
 
