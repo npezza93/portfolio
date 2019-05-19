@@ -68,7 +68,7 @@
       right: 25px;
       border: none;
       cursor: pointer; }
-      #contact form .submit svg {
+      #contact form .submit i {
         color: #fff;
         position: absolute;
         left: 13px;
@@ -86,14 +86,14 @@
       border-radius: 50%;
       position: relative;
       margin: 0 10px; }
-      #contact .social .social-container svg {
+      #contact .social .social-container i {
         position: absolute;
         color: #fff; }
-        #contact .social .social-container svg.fa-github {
+        #contact .social .social-container i.fa-github {
           font-size: 28px;
           top: 6px;
           left: 6px; }
-        #contact .social .social-container svg.fa-linkedin-in {
+        #contact .social .social-container i.fa-linkedin-in {
           font-size: 25px;
           top: 7px;
           left: 10px; }
@@ -111,7 +111,7 @@
     #hamburger {
       display: flex; } }
   #hamburger div {
-    height: 2px;
+    height: 1.5px;
     background: #212121;
     border-radius: 3px; }
 
@@ -126,13 +126,15 @@
   @media (max-width: 600px) {
     #hamburger-menu {
       display: block; } }
-  #hamburger-menu i {
+  #hamburger-menu svg {
+    width: 10px;
     position: absolute;
+    visibility: visible;
     right: 50px;
-    font-size: 25px;
-    top: 15px;
+    top: 25px;
     cursor: pointer;
-    z-index: 10003; }
+    z-index: 10003;
+    transform: rotate(90deg); }
   #hamburger-menu.active {
     top: 0px; }
     #hamburger-menu.active:before {
@@ -168,7 +170,9 @@
       padding-bottom: 15px; }
       #hamburger-menu ul li a {
         text-decoration: none;
-        color: #212121; }
+        color: #212121;
+        font-size: 17px;
+        font-weight: 300; }
 
 #backdrop {
   position: fixed;
