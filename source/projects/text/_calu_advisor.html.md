@@ -10,7 +10,7 @@ The Calu Advisor combines these two systems. Before every semester a faculty adv
 
 Students can also filter courses based on times they cannot attend class. After building their schedule, they automatically submit it to their advisor and, without setting up a meeting, their advisor can approve it.
 
-The Calu Advisor is a responsive web application built on Rails 5.1.1, and [Material Design Components](https://github.com/material-components/material-components-web), with a PostgreSQL database.
+The Calu Advisor is a responsive web application built on Rails 5.1, and [Material Design Components](https://github.com/material-components/material-components-web), with a PostgreSQL database.
 
 
-[www.caluadvisor.com](http://www.caluadvisor.com)
+[caluadvisor.com](http://www.caluadvisor.com)

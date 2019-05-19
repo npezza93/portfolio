@@ -59,7 +59,7 @@
       -o-transform: skewY(-8deg)
       transform: skewY(-8deg)
       -webkit-backface-visibility: hidden
-    h1
+    h1.section-header
       display: flex
       flex-direction: row
       justify-content: flex-end
@@ -109,7 +109,7 @@
             width: 100vw
             height: 100vh
             z-index: 11
-            .text, h2, hr, svg.close-project-desc
+            .text, h1.project-name, hr, svg.close-project-desc
               visibility: visible
               opacity: 1
             .img
@@ -119,16 +119,16 @@
               margin-right: auto
               cursor: default
           &.open-transition
-            .text, h2, hr, svg.close-project-desc
+            .text, h1.project-name, hr, svg.close-project-desc
               transition: opacity .2s ease-in-out .2s, visibility .2s ease-in-out .2s
           &.close-transition
-            .text, h2, hr, svg.close-project-desc
+            .text, h1.project-name, hr, svg.close-project-desc
               transition: opacity .2s ease-in-out, visibility .2s ease-in-out
           &.fade-out
-            .text, h2, hr, svg.close-project-desc
+            .text, h1.project-name, hr, svg.close-project-desc
               visibility: hidden !important
               opacity: 0 !important
-          .text, h2, hr, svg.close-project-desc
+          .text, h1.project-name, hr, svg.close-project-desc
             visibility: visible
             opacity: 0
           .text
@@ -143,7 +143,7 @@
               padding-right: 20px
               padding-left: 55px
               line-height: 1.35
-              font-size: 15px
+              font-size: 17px
               font-weight: 300
               ul
                 padding-left: 20px
@@ -155,7 +155,7 @@
               padding-left: 20px
               padding-right: 20px
               line-height: 1.35
-              font-size: 15px
+              font-size: 17px
               font-weight: 300
               letter-spacing: 0.5px
               max-width: 550px
@@ -167,13 +167,14 @@
           hr
             text-align: center
             border: 0
-            border-bottom: 1px solid #212121
+            border-bottom: 1px solid #c6c6c6
             width: 100px
             margin-bottom: 35px
-          h2
+          h1.project-name
             text-align: center
             white-space: normal
-            font-weight: 500
+            letter-spacing: 2px
+            font-weight: 400
             font-family: Inter
           svg.close-project-desc
             position: absolute
