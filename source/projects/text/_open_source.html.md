@@ -6,7 +6,7 @@ Some Ruby gems I have created are:
 - [chat](https://github.com/npezza93/chat)
   - A simple Rails chat plugin that allows users to talk to one or more people at a time that leverages ActionCable.
 
-- [word_search](https://github.com/npezza93/word_search)
+- [word_search](https://pezza.co/word_search)
   - Can generate and solve 2D and 3D word search puzzles.
 
 - [Absorb Learning Management System API](https://github.com/npezza93/absorb_api)
