@@ -10,14 +10,16 @@ $(document).on('click', '.slide', function() {
     return
   }
 
-  let content = this.querySelector('.content')
-  let logoContainer = this.querySelector(".invisible.img")
+  const project = this.dataset.for
+  const content = document.querySelector(`[data-project=${project}`)
 
-  let bounds = logoContainer.getBoundingClientRect()
+  let bounds = this.getBoundingClientRect()
   content.style.position = "fixed"
   content.style.top = bounds.top.toString() + "px"
   content.style.left = bounds.left.toString() + "px"
+  content.classList.remove("invisible")
   content.classList.add('active')
+  content.querySelector(".img").classList.remove("invisible")
   document.querySelector('body').style['overflow-y'] = 'hidden'
   $(content).animate(
     { "left": 0, "top": 0 },
@@ -31,9 +33,11 @@ $(document).on('click', '.slide', function() {
 });
 
 $(document).on('click', '.close-project-desc', function() {
-  let slide = this.parentElement.parentElement
-  let logoContainer = slide.querySelector(".invisible.img")
-  let content = slide.querySelector(".content")
+  let content = this.parentElement
+  const project = content.dataset.project
+  const slide = document.querySelector(`[data-for=${project}`)
+
+  let logoContainer = slide.querySelector(".img")
   let bounds = logoContainer.getBoundingClientRect()
 
   content.style.height = bounds.height.toString() + "px"
@@ -45,13 +49,13 @@ $(document).on('click', '.close-project-desc', function() {
     "left": bounds.left.toString() + "px",
     "top": bounds.top.toString() + "px",
   }, 400, function() {
-    content.querySelector('.img').classList.remove('active')
     content.classList.remove('active')
     $(content).removeAttr('style')
     document.querySelector('body').style['overflow-y'] = 'scroll'
     content.classList.remove('fade-out')
     content.classList.add('open-transition')
     content.classList.remove('close-transition')
+    content.classList.add('invisible')
   })
 });
 
