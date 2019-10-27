@@ -3,12 +3,15 @@
 require "test_helper"
 
 class EmailMailerTest < ActionMailer::TestCase
-  test "contact" do
-    mail = EmailMailer.contact
-    assert_equal "Contact", mail.subject
-    assert_equal ["to@example.org"], mail.to
-    assert_equal ["from@example.com"], mail.from
-    assert_match "Hi", mail.body.encoded
+  setup do
+    @email = emails(:one)
+    @mailer = EmailMailer.contact(@email.id)
   end
 
+  test "contact" do
+    assert_equal "New contact submission", @mailer.subject
+    assert_equal ["no-reply@example.com"], @mailer.to
+    assert_equal [@email.email], @mailer.from
+    assert_match @email.message, @mailer.body.encoded
+  end
 end

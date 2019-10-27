@@ -6,6 +6,7 @@
 # and recreated between test runs. Don't rely on the data there!
 
 Rails.application.configure do
+  ENV["EMAIL_TO"] = "no-reply@example.com"
   # Settings specified here will take precedence over those in
   # config/application.rb.
 
