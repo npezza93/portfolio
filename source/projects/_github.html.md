@@ -1,5 +1,8 @@
 Some Ruby gems I have created are:
 
+- [RediSearch](https://github.com/npezza93/redi_search)
+  - Ruby wrapper around RediSearch that can integrate with Rails.
+
 - [lecture](https://github.com/npezza93/lecture)
   - A way to present a simple slideshow through the terminal with all the slides written in Ruby.
 
