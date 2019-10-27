@@ -25,11 +25,17 @@ page '/*.txt', layout: false
 ###
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def projects
+    {
+      n2: "N2 Publishing",
+      archipelago: "Archipelago",
+      github: "Open Source Contributions",
+      cal: "California University of PA Class Advisor",
+      eighty: "Eighty",
+    }
+  end
+end
 
 # Build-specific configuration
 configure :build do

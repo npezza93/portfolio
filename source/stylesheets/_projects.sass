@@ -73,6 +73,7 @@
     .container
       margin-top: 45px
       max-height: 400px
+      height: 320px
       white-space: nowrap
       overflow-y: hidden
       .slide
@@ -128,60 +129,108 @@
             .text, h1.project-name, hr, svg.close-project-desc
               visibility: hidden !important
               opacity: 0 !important
-          .text, h1.project-name, hr, svg.close-project-desc
-            visibility: visible
-            opacity: 0
-          .text
-            padding-bottom: 40px
-            max-width: 600px
-            white-space: normal
-            margin: auto
-            font-family: Inter
-            ul
-              max-width: 550px
-              margin: auto
-              padding-right: 20px
-              padding-left: 55px
-              line-height: 1.35
-              font-size: 17px
-              font-weight: 300
-              ul
-                padding-left: 20px
-                list-style-type: none
-                margin: 15px 0
-            p
-              margin-left: auto
-              margin-right: auto
-              padding-left: 20px
-              padding-right: 20px
-              line-height: 1.35
-              font-size: 17px
-              font-weight: 300
-              letter-spacing: 0.5px
-              max-width: 550px
-              text-indent: 25px
-            a
-              color: #212121
-              font-weight: 500
-              text-decoration: underline
-          hr
-            text-align: center
-            border: 0
-            border-bottom: 1px solid #c6c6c6
-            width: 100px
-            margin-bottom: 35px
-          h1.project-name
-            text-align: center
-            white-space: normal
-            letter-spacing: 2px
-            font-weight: 400
-            font-family: Inter
-          svg.close-project-desc
-            position: absolute
-            left: 0
-            font-size: 23px
-            color: #fff
-            left: 15px
-            top: 35px
-            cursor: pointer
-            width: 11px
+
+.project.content
+  position: absolute
+  top: 0
+  left: 0
+  width: 400px
+  height: 320px
+  background: #F7F7F7
+  overflow-y: hidden
+  overflow-x: hidden
+  transition: width .4s ease-in-out, height .4s ease-in-out
+  .img
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center center
+    transition: all .4s ease
+    width: 400px
+    height: 320px
+    cursor: pointer
+    @media (max-width: 450px)
+      width: 300px
+      height: 275px
+  @media (max-width: 450px)
+    width: 300px
+    height: 288px
+  &.active
+    width: 100vw
+    height: 100vh
+    z-index: 11
+    .text, h1.project-name, hr, svg.close-project-desc
+      visibility: visible
+      opacity: 1
+    .img
+      width: 100%
+      max-width: 1000px
+      margin-left: auto
+      margin-right: auto
+      cursor: default
+  &.open-transition
+    .text, h1.project-name, hr, svg.close-project-desc
+      transition: opacity .2s ease-in-out .2s, visibility .2s ease-in-out .2s
+  &.close-transition
+    .text, h1.project-name, hr, svg.close-project-desc
+      transition: opacity .2s ease-in-out, visibility .2s ease-in-out
+  &.fade-out
+    .text, h1.project-name, hr, svg.close-project-desc
+      visibility: hidden !important
+      opacity: 0 !important
+  .text, h1.project-name, hr, svg.close-project-desc
+    visibility: visible
+    opacity: 0
+  .text
+    padding-bottom: 40px
+    max-width: 600px
+    white-space: normal
+    margin: auto
+    font-family: Inter
+    ul
+      max-width: 550px
+      margin: auto
+      padding-right: 20px
+      padding-left: 55px
+      line-height: 1.35
+      font-size: 17px
+      font-weight: 300
+      ul
+        padding-left: 20px
+        list-style-type: none
+        margin: 15px 0
+    p
+      margin-left: auto
+      margin-right: auto
+      padding-left: 20px
+      padding-right: 20px
+      line-height: 1.35
+      font-size: 17px
+      font-weight: 300
+      letter-spacing: 0.5px
+      max-width: 550px
+      text-indent: 25px
+    a
+      color: #212121
+      font-weight: 500
+      text-decoration: underline
+  hr
+    text-align: center
+    border: 0
+    border-bottom: 1px solid #c6c6c6
+    width: 100px
+    margin-bottom: 35px
+  h1.project-name
+    text-align: center
+    white-space: normal
+    letter-spacing: 2px
+    font-weight: 400
+    font-family: Inter
+  svg.close-project-desc
+    position: absolute
+    left: 0
+    font-size: 23px
+    color: #fff
+    left: 15px
+    top: 35px
+    cursor: pointer
+    width: 11px
