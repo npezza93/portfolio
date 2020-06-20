@@ -9,7 +9,9 @@ AllCops:
     - node_modules/**/*
     - tmp/**/*
     - test/dummy/db/schema.rb
-  TargetRubyVersion: 2.6
+    - gemfiles/**/*
+    - bin/**/*
+  TargetRubyVersion: 2.5
 
 # Department Bundler
 Bundler/DuplicatedGem:
@@ -35,16 +37,16 @@ Layout/AccessModifierIndentation:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#indent-public-private-protected
   Enabled: false
 
-Layout/AlignArray:
+Layout/ArrayAlignment:
   Description: Align the elements of an array literal if they span more than one line.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#align-multiline-arrays
   Enabled: true
 
-Layout/AlignHash:
+Layout/HashAlignment:
   Description: Align the elements of a hash literal if they span more than one line.
   Enabled: true
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   Description: Align the parameters of a method call if they span more than one line.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-double-indent
   Enabled: true
@@ -150,7 +152,7 @@ Layout/InitialIndentation:
   Description: Checks the indentation of the first non-blank non-comment line in a file.
   Enabled: false
 
-Layout/IndentFirstArgument:
+Layout/FirstArgumentIndentation:
   Description: Checks the indentation of the first parameter in a method call.
   Enabled: false
 
@@ -164,19 +166,19 @@ Layout/IndentationWidth:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-indentation
   Enabled: true
 
-Layout/IndentFirstArrayElement:
+Layout/FirstArrayElementIndentation:
   Description: Checks the indentation of the first element in an array literal.
   Enabled: false
 
-Layout/IndentAssignment:
+Layout/AssignmentIndentation:
   Description: Checks the indentation of the first line of the right-hand-side of a multi-line assignment.
   Enabled: true
 
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   Description: Checks the indentation of the first key in a hash literal.
   Enabled: false
 
-Layout/IndentHeredoc:
+Layout/HeredocIndentation:
   Description: This cops checks the indentation of the here document bodies.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#squiggly-heredocs
   Enabled: true
@@ -327,12 +329,15 @@ Layout/SpaceInsideStringInterpolation:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#string-interpolation
   Enabled: false
 
-Layout/Tab:
+Layout/IndentationStyle:
   Description: No hard tabs.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-indentation
   Enabled: false
 
-Layout/TrailingBlankLines:
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Layout/TrailingEmptyLines:
   Description: Checks trailing blank lines and final newline.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#newline-eof
   Enabled: false
@@ -399,7 +404,7 @@ Lint/DuplicateMethods:
   Description: Check for duplicate method definitions.
   Enabled: true
 
-Lint/DuplicatedKey:
+Lint/DuplicateHashKey:
   Description: Check for duplicate keys in hash literals.
   Enabled: true
 
@@ -432,10 +437,6 @@ Layout/EndAlignment:
   Description: Align ends correctly.
   Enabled: true
 
-Lint/EndInMethod:
-  Description: END blocks should not be placed inside method definitions.
-  Enabled: true
-
 Lint/EnsureReturn:
   Description: Do not use return in an ensure block.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-return-ensure
@@ -449,7 +450,7 @@ Lint/FormatParameterMismatch:
   Description: The number of parameters to format/sprint must match the fields.
   Enabled: true
 
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Description: Don't suppress exception.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#dont-hide-exceptions
   Enabled: true
@@ -483,7 +484,7 @@ Lint/Loop:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#loop-with-break
   Enabled: true
 
-Lint/MultipleCompare:
+Lint/MultipleComparison:
   Description: Use `&&` operator to compare multiple value.
   Enabled: true
 
@@ -558,7 +559,7 @@ Lint/ShadowingOuterLocalVariable:
   Description: Do not use the same name as outer local variable for block arguments or block local variables.
   Enabled: true
 
-Lint/StringConversionInInterpolation:
+Lint/RedundantStringCoercion:
   Description: Checks for Object#to_s usage in string interpolation.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-to-s
   Enabled: true
@@ -571,11 +572,11 @@ Lint/UnifiedInteger:
   Description: Use Integer instead of Fixnum or Bignum
   Enabled: true
 
-Lint/UnneededRequireStatement:
+Lint/RedundantRequireStatement:
   Description: Checks for unnecessary `require` statement.
   Enabled: true
 
-Lint/UnneededSplatExpansion:
+Lint/RedundantSplatExpansion:
   Description: Checks for splat unnecessarily being called on literals
   Enabled: true
 
@@ -646,7 +647,6 @@ Metrics/BlockLength:
     - Rakefile
     - "**/*.rake"
     - spec/**/*.rb
-    - 'config/routes.rb'
     - 'config/environments/*.rb'
 
 Metrics/BlockNesting:
@@ -664,18 +664,21 @@ Metrics/CyclomaticComplexity:
   Description: A complexity metric that is strongly correlated to the number of test cases needed to validate a method.
   Enabled: true
 
-Metrics/LineLength:
+Layout/LineLength:
   Description: Limit lines to 80 characters.
   StyleGuide: '#80-character-limits'
   Enabled: true
+  Max: 80
   Exclude:
     - 'db/**/*'
+    - 'config/initializers/**/*'
+    - 'config/environments/**/*'
 
 Metrics/MethodLength:
   Description: Avoid methods longer than 10 lines of code.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#short-methods
   Enabled: true
-  Max: 10
+  Max: 6
   Exclude:
     - 'db/**/*'
 
@@ -821,6 +824,9 @@ Performance/RedundantMerge:
   Reference: https://github.com/JuanitoFatas/fast-ruby#hashmerge-vs-hash-code
   Enabled: true
 
+Style/ExponentialNotation:
+  Enabled: true
+
 Style/RedundantSortBy:
   Description: Use `sort` instead of `sort_by { |x| x }`.
   Enabled: true
@@ -870,161 +876,6 @@ Performance/UnfreezeString:
 
 Performance/UriDefaultParser:
   Description: Use `URI::DEFAULT_PARSER` instead of `URI::Parser.new`.
-  Enabled: true
-
-# Department Rails
-Rails/ActionFilter:
-  Description: Enforces consistent use of action filter methods.
-  Enabled: false
-
-Rails/ApplicationJob:
-  Description: Check that jobs subclass ApplicationJob.
-  Enabled: true
-
-Rails/ApplicationRecord:
-  Description: Check that models subclass ApplicationRecord.
-  Enabled: true
-
-Rails/ActiveSupportAliases:
-  Description: 'Avoid ActiveSupport aliases of standard ruby methods: `String#starts_with?`, `String#ends_with?`, `Array#append`, `Array#prepend`.'
-  Enabled: true
-
-Rails/Blank:
-  Description: Enforce using `blank?` and `present?`.
-  Enabled: true
-  NilOrEmpty: true
-  NotPresent: true
-  UnlessPresent: true
-
-Rails/Date:
-  Description: Checks the correct usage of date aware methods, such as Date.today, Date.current etc.
-  Enabled: true
-
-Rails/Delegate:
-  Description: Prefer delegate method for delegations.
-  Enabled: true
-
-Rails/DelegateAllowBlank:
-  Description: Do not use allow_blank as an option to delegate.
-  Enabled: true
-
-Rails/DynamicFindBy:
-  Description: Use `find_by` instead of dynamic `find_by_*`.
-  StyleGuide: https://github.com/bbatsov/rails-style-guide#find_by
-  Enabled: true
-
-Rails/EnumUniqueness:
-  Description: Avoid duplicate integers in hash-syntax `enum` declaration.
-  Enabled: true
-
-Rails/Exit:
-  Description: Favor `fail`, `break`, `return`, etc. over `exit` in application or library code outside of Rake files to avoid exits during unit testing or running in production.
-  Enabled: true
-
-Rails/FilePath:
-  Description: Use `Rails.root.join` for file path joining.
-  Enabled: true
-
-Rails/FindBy:
-  Description: Prefer find_by over where.first.
-  StyleGuide: https://github.com/bbatsov/rails-style-guide#find_by
-  Enabled: true
-
-Rails/FindEach:
-  Description: Prefer all.find_each over all.find.
-  StyleGuide: https://github.com/bbatsov/rails-style-guide#find-each
-  Enabled: true
-
-Rails/HasAndBelongsToMany:
-  Description: Prefer has_many :through to has_and_belongs_to_many.
-  StyleGuide: https://github.com/bbatsov/rails-style-guide#has-many-through
-  Enabled: true
-
-Rails/HasManyOrHasOneDependent:
-  Description: Define the dependent option to the has_many and has_one associations.
-  StyleGuide: https://github.com/bbatsov/rails-style-guide#has_many-has_one-dependent-option
-  Enabled: true
-
-Rails/HttpPositionalArguments:
-  Description: Use keyword arguments instead of positional arguments in http method calls.
-  Enabled: true
-
-Rails/NotNullColumn:
-  Description: Do not add a NOT NULL column without a default value
-  Enabled: true
-
-Rails/Output:
-  Description: Checks for calls to puts, print, etc.
-  Enabled: true
-
-Rails/OutputSafety:
-  Description: The use of `html_safe` or `raw` may be a security risk.
-  Enabled: true
-
-Rails/PluralizationGrammar:
-  Description: Checks for incorrect grammar when using methods like `3.day.ago`.
-  Enabled: true
-
-Rails/Present:
-  Description: Enforce using `blank?` and `present?`.
-  Enabled: true
-  NotNilAndNotEmpty: true
-  NotBlank: true
-  UnlessBlank: true
-
-Rails/ReadWriteAttribute:
-  Description: Checks for read_attribute(:attr) and write_attribute(:attr, val).
-  StyleGuide: https://github.com/bbatsov/rails-style-guide#read-attribute
-  Enabled: false
-
-Rails/RelativeDateConstant:
-  Description: Do not assign relative date to constants.
-  Enabled: true
-
-Rails/RequestReferer:
-  Description: Use consistent syntax for request.referer.
-  Enabled: true
-
-Rails/ReversibleMigration:
-  Description: Checks whether the change method of the migration file is reversible.
-  StyleGuide: https://github.com/bbatsov/rails-style-guide#reversible-migration
-  Reference: http://api.rubyonrails.org/classes/ActiveRecord/Migration/CommandRecorder.html
-  Enabled: true
-
-Rails/SafeNavigation:
-  Description: Use Ruby's safe navigation operator (`&.`) instead of `try!`
-  Enabled: true
-
-Rails/SaveBang:
-  Description: Identifies possible cases where Active Record save! or related should be used.
-  StyleGuide: https://github.com/bbatsov/rails-style-guide#save-bang
-  Enabled: false
-
-Rails/ScopeArgs:
-  Description: Checks the arguments of ActiveRecord scopes.
-  Enabled: true
-
-Rails/TimeZone:
-  Description: Checks the correct usage of time zone aware methods.
-  StyleGuide: https://github.com/bbatsov/rails-style-guide#time
-  Reference: http://danilenko.org/2012/7/6/rails_timezones
-  Enabled: true
-
-Rails/UniqBeforePluck:
-  Description: Prefer the use of uniq or distinct before pluck.
-  Enabled: true
-
-Rails/UnknownEnv:
-  Description: Use correct environment name.
-  Enabled: true
-
-Rails/SkipsModelValidations:
-  Description: Use methods that skips model validations with caution. See reference for more information.
-  Reference: http://guides.rubyonrails.org/active_record_validations.html#skipping-validations
-  Enabled: true
-
-Rails/Validation:
-  Description: Use validates :attribute, hash of validations.
   Enabled: true
 
 # Department Security
@@ -1100,10 +951,6 @@ Style/BlockDelimiters:
   Description: Avoid using {...} for multi-line blocks (multiline chaining is always ugly). Prefer {...} over do...end for single-line blocks.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#single-line-blocks
   Enabled: true
-
-Style/BracesAroundHashParameters:
-  Description: Enforce braces style around hash parameters.
-  Enabled: false
 
 Style/CaseEquality:
   Description: Avoid explicit use of the case equality operator(===).
@@ -1228,7 +1075,7 @@ Style/EmptyMethod:
 Style/EndBlock:
   Description: Avoid the use of END blocks.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-END-blocks
-  Enabled: false
+  Enabled: true
 
 Style/Encoding:
   Description: Use UTF-8 as the source file encoding.
@@ -1411,7 +1258,7 @@ Style/MultipleComparison:
 
 Style/MutableConstant:
   Description: Do not assign mutable objects to constants.
-  Enabled: true
+  Enabled: false
 
 Style/NegatedIf:
   Description: Favor unless over if for negative conditions (or control flow or).
@@ -1702,15 +1549,15 @@ Style/UnlessElse:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-else-with-unless
   Enabled: true
 
-Style/UnneededCapitalW:
+Style/RedundantCapitalW:
   Description: Checks for %W when interpolation is not needed.
   Enabled: false
 
-Style/UnneededInterpolation:
+Style/RedundantInterpolation:
   Description: Checks for strings that are just an interpolated expression.
   Enabled: true
 
-Style/UnneededPercentQ:
+Style/RedundantPercentQ:
   Description: Checks for %q/%Q when single quotes or double quotes would do.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-q
   Enabled: false
@@ -1754,9 +1601,34 @@ Style/ZeroLengthPredicate:
   Description: Use #empty? when testing for objects of length 0.
   Enabled: true
 
-Rails/InverseOf:
-  Description: 'Checks for associations where the inverse cannot be determined automatically.'
-  Enabled: false
-  VersionAdded: '0.52'
-  Include:
-    - app/models/**/*.rb
+Lint/RaiseException:
+  Description: Checks for `raise` or `fail` statements which are raising `Exception` class.
+  Enabled: true
+Lint/StructNewOverride:
+  Description: 'Disallow overriding the `Struct` built-in methods via `Struct.new`.'
+  Enabled: true
+Style/HashEachMethods:
+  Description: 'Use Hash#each_key and Hash#each_value.'
+  Enabled: true
+  Safe: false
+Style/HashTransformKeys:
+  Description: 'Prefer `transform_keys` over `each_with_object` and `map`.'
+  Enabled: true
+  Safe: false
+Style/HashTransformValues:
+  Description: 'Prefer `transform_values` over `each_with_object` and `map`.'
+  Enabled: true
+  Safe: false
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: true
