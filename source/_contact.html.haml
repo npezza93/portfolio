@@ -3,13 +3,21 @@
     %h1.upcase
       %span.slash #
       contact
-    = form_for Email.new, 'https://portfoliomailserver.herokuapp.com/emails', method: "POST" do |f|
+    = form_for Email.new, email_url, method: "POST" do |f|
+      = recaptcha
       = f.text_field :name, placeholder: "Your Name", required: true
       .input-border
       = f.email_field :email, placeholder: "Your Email", required: true
       .input-border
       %textarea.expand{ id: "email_msg", placeholder: "Your Message", name: "email[message]", required: true, data: { min: { rows: 2 } } }
       .input-border
+      %p.recaptcha-disclosure
+        This site is protected by reCAPTCHA and the Google
+        = link_to "Privacy Policy", "https://policies.google.com/privacy"
+        and
+        = link_to "Terms of Service", "https://policies.google.com/terms"
+        apply.
+
       %button{ type: :submit, class: "submit", "aria-label" => "Contact" }
         %i.far.fa-paper-plane
     .social
