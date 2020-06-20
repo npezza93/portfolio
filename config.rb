@@ -33,6 +33,7 @@ helpers do
       github: "Open Source Contributions",
       cal: "California University of PA Class Advisor",
       eighty: "Eighty",
+      spoonflower: "Spoonflower",
     }
   end
 
