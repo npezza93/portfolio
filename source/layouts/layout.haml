@@ -8,14 +8,13 @@
 
     %title Nick Pezza - Freelance Web Developer and Ruby on Rails Consultant
     = favicon_tag 'logo.png'
-    = stylesheet_link_tag :normalize, :site
-    = stylesheet_link_tag "https://use.fontawesome.com/releases/v5.8.2/css/all.css", integrity: "sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay", crossorigin: :anonymous
-    = javascript_include_tag :main
+    = stylesheet_link_tag :normalize, :site, async: true
+    = stylesheet_link_tag "https://use.fontawesome.com/releases/v5.8.2/css/all.css", integrity: "sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay", crossorigin: :anonymous, async: true
+    = javascript_include_tag :main, async: true
     %meta{ name: "theme-color", content: "#fff" }
 
-    %script{ src: "https://www.google.com/recaptcha/api.js?render=#{site_key}" }
-    / Global site tag (gtag.js) - Google Analytics
-    %script{ async: "", src: "https://www.googletagmanager.com/gtag/js?id=UA-42017922-2" }
+    %script{ async: true, src: "https://www.google.com/recaptcha/api.js?render=#{site_key}" }
+    %script{ async: true, src: "https://www.googletagmanager.com/gtag/js?id=UA-42017922-2" }
     :javascript
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
