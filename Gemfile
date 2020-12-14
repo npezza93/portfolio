@@ -2,12 +2,14 @@
 
 source "https://rubygems.org"
 
-ruby "2.7.1"
+ruby "2.7.2"
 
 gem "pg"
 gem "pry-rails"
 gem "puma"
 gem "rails"
+
+gem "sendgrid-ruby"
 
 group :development, :test do
   gem "rubocop"
@@ -20,5 +22,3 @@ group :development do
 end
 
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
-
-gem "recaptcha", "~> 5.5"
