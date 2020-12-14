@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "2.7.2"
+ruby "2.7.1"
 
 gem "pg"
 gem "pry-rails"
@@ -20,3 +20,5 @@ group :development do
 end
 
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
+
+gem "recaptcha", "~> 5.5"
