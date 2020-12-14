@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require "net/http"
+require "uri"
+
 class EmailsController < ApplicationController
   def create
     return unless valid_recaptcha?(params["h-captcha-response"])
