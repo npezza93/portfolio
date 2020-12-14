@@ -67,11 +67,6 @@ $(document).on('click', '#hamburger-menu svg, #hamburger-menu a', function() {
   $('#hamburger-menu, #backdrop').toggleClass('active')
 })
 
-$(document).on('submit', 'form', function(e) {
-  this.submit()
-  $('#notice').toggleClass('active')
-})
-
 $(document).one('focus.expand', 'textarea.expand', function() {
   var savedValue = this.value;
   this.value = '';
