@@ -42,22 +42,7 @@ helpers do
   end
 
   def site_key
-    "6LdJ_c8UAAAAAJ5KeEWBfWivJ9JQhNw0BRADmDy_"
-  end
-
-  def recaptcha
-    id = "recaptcha_token_#{SecureRandom.hex(10)}"
-
-    %Q{
-      <input name="recaptcha_token" type="hidden" id="#{id}"/>
-      <script>
-        grecaptcha.ready(function() {
-          grecaptcha.execute('#{site_key}', {action: 'email'}).then(function(token) {
-            document.getElementById("#{id}").value = token;
-          });
-        });
-      </script>
-    }
+    "2f00edd2-c2df-4e3d-90ed-32d608438f64"
   end
 end
 
