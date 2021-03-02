@@ -1,6 +1,7 @@
-const $ = require('jquery');
-import { MDCTabScroller } from '@material/tab-scroller';
+import jquery from 'https://cdn.skypack.dev/jquery';
+import { MDCTabScroller } from 'https://cdn.skypack.dev/@material/tab-scroller';
 
+const $ = jquery;
 window.addEventListener('load', function() {
   new MDCTabScroller(document.querySelector('.mdc-tab-scroller'))
 })
