@@ -1,8 +1,11 @@
-import { MDCTabScroller } from 'https://cdn.skypack.dev/@material/tab-scroller';
-
-window.addEventListener('load', function() {
-  new MDCTabScroller(document.querySelector('.mdc-tab-scroller'))
-})
+document.querySelector('.mdc-tab-scroller').addEventListener('wheel', function(e) {
+  if (e.deltaY != 0) {
+    this.scrollLeft -= (e.wheelDelta );
+    if (this.scrollLeft !== 0 && this.scrollLeft !== (this.scrollWidth - this.clientWidth)) {
+      e.preventDefault();
+    }
+  }
+});
 
 document.querySelectorAll('.slide').forEach((slide) => {
   slide.addEventListener('click', () => {
