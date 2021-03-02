@@ -1,7 +1,5 @@
-import jquery from 'https://cdn.skypack.dev/jquery';
 import { MDCTabScroller } from 'https://cdn.skypack.dev/@material/tab-scroller';
 
-const $ = jquery;
 window.addEventListener('load', function() {
   new MDCTabScroller(document.querySelector('.mdc-tab-scroller'))
 })
@@ -23,15 +21,15 @@ document.querySelectorAll('.slide').forEach((slide) => {
     content.classList.add('active')
     content.querySelector(".img").classList.remove("invisible")
     document.querySelector('body').style['overflow-y'] = 'hidden'
-    $(content).animate(
-      { "left": 0, "top": 0 },
-      400,
-      function() {
-        content.classList.remove('open-transition')
-        content.classList.add('close-transition')
-        content.style.overflowY = 'scroll'
-      }
-    )
+
+    const openUI = content.animate({ left: 0, top: 0 }, { duration: 400, iterations: 1, })
+    openUI.onfinish = function() {
+      content.style.top = "0px"
+      content.style.left = "0px"
+      content.classList.remove('open-transition')
+      content.classList.add('close-transition')
+      content.style.overflowY = 'scroll'
+    };
   });
 });
 
@@ -49,10 +47,13 @@ document.querySelectorAll('.close-project-desc').forEach((close) => {
     content.style.overflowY = 'hidden'
     content.classList.add('fade-out')
 
-    $(content).animate({
-      "left": bounds.left.toString() + "px",
-      "top": bounds.top.toString() + "px",
-    }, 400, function() {
+    const openUI = content.animate({
+      left: bounds.left.toString() + "px",
+      top: bounds.top.toString() + "px"
+    }, { duration: 400, iterations: 1, })
+    openUI.onfinish = function() {
+      content.style.left = bounds.left.toString() + "px"
+      content.style.top = bounds.top.toString() + "px"
       content.classList.remove('active')
       content.removeAttribute('style');
       document.querySelector('body').style['overflow-y'] = 'scroll'
@@ -60,7 +61,7 @@ document.querySelectorAll('.close-project-desc').forEach((close) => {
       content.classList.add('open-transition')
       content.classList.remove('close-transition')
       content.classList.add('invisible')
-    })
+    };
   });
 });
 
