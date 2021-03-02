@@ -8,8 +8,9 @@
       .input-border
       = f.email_field :email, placeholder: "Your Email", required: true
       .input-border
-      %textarea.expand{ id: "email_msg", placeholder: "Your Message", name: "email[message]", required: true, data: { min: { rows: 2 } } }
-      .input-border
+      .grow-wrap
+        %textarea{ id: "email_msg", placeholder: "Your Message", name: "email[message]", required: true, data: { min: { rows: 2 } } }
+        .input-border
       %p.recaptcha-disclosure
         This site is protected by hCaptcha and its
         = link_to "Privacy Policy", "https://hcaptcha.com/privacy"
