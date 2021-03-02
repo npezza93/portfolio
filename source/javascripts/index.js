@@ -25,7 +25,7 @@ document.querySelectorAll('.slide').forEach((slide) => {
     content.querySelector(".img").classList.remove("invisible")
     document.querySelector('body').style['overflow-y'] = 'hidden'
 
-    const openUI = content.animate({ left: 0, top: 0 }, { duration: 400, iterations: 1, })
+    const openUI = content.animate({ left: 0, top: 0 }, { easing: "cubic-bezier(0.42, 0, 0.58, 1)", duration: 400, iterations: 1, })
     openUI.onfinish = function() {
       content.style.top = "0px"
       content.style.left = "0px"
@@ -53,7 +53,7 @@ document.querySelectorAll('.close-project-desc').forEach((close) => {
     const openUI = content.animate({
       left: bounds.left.toString() + "px",
       top: bounds.top.toString() + "px"
-    }, { duration: 400, iterations: 1, })
+    }, { easing: "cubic-bezier(0.42, 0, 0.58, 1)", duration: 400, iterations: 1, })
     openUI.onfinish = function() {
       content.style.left = bounds.left.toString() + "px"
       content.style.top = bounds.top.toString() + "px"
