@@ -1,84 +1,82 @@
-const $ = require('jquery');
-import { MDCTabScroller } from '@material/tab-scroller';
-
-window.addEventListener('load', function() {
-  new MDCTabScroller(document.querySelector('.mdc-tab-scroller'))
-})
-
-$(document).on('click', '.slide', function() {
-  if (document.querySelector('.content.active')) {
-    return
+document.querySelector('.mdc-tab-scroller').addEventListener('wheel', function(e) {
+  if (e.deltaY != 0) {
+    this.scrollLeft -= (e.wheelDelta );
+    if (this.scrollLeft !== 0 && this.scrollLeft !== (this.scrollWidth - this.clientWidth)) {
+      e.preventDefault();
+    }
   }
+});
 
-  const project = this.dataset.for
-  const content = document.querySelector(`[data-project=${project}`)
+document.querySelectorAll('.slide').forEach((slide) => {
+  slide.addEventListener('click', () => {
+    if (document.querySelector('.content.active')) {
+      return
+    }
 
-  let bounds = this.getBoundingClientRect()
-  content.style.position = "fixed"
-  content.style.top = bounds.top.toString() + "px"
-  content.style.left = bounds.left.toString() + "px"
-  content.classList.remove("invisible")
-  content.classList.add('active')
-  content.querySelector(".img").classList.remove("invisible")
-  document.querySelector('body').style['overflow-y'] = 'hidden'
-  $(content).animate(
-    { "left": 0, "top": 0 },
-    400,
-    function() {
+    const project = slide.dataset.for
+    const content = document.querySelector(`[data-project=${project}`)
+
+    let bounds = slide.getBoundingClientRect()
+    content.style.position = "fixed"
+    content.style.top = bounds.top.toString() + "px"
+    content.style.left = bounds.left.toString() + "px"
+    content.classList.remove("invisible")
+    content.classList.add('active')
+    content.querySelector(".img").classList.remove("invisible")
+    document.querySelector('body').style['overflow-y'] = 'hidden'
+
+    const openUI = content.animate({ left: 0, top: 0 }, { easing: "cubic-bezier(0.42, 0, 0.58, 1)", duration: 400, iterations: 1, })
+    openUI.onfinish = function() {
+      content.style.top = "0px"
+      content.style.left = "0px"
       content.classList.remove('open-transition')
       content.classList.add('close-transition')
       content.style.overflowY = 'scroll'
-    }
-  )
+    };
+  });
 });
 
-$(document).on('click', '.close-project-desc', function() {
-  let content = this.parentElement
-  const project = content.dataset.project
-  const slide = document.querySelector(`[data-for=${project}`)
+document.querySelectorAll('.close-project-desc').forEach((close) => {
+  close.addEventListener('click', () => {
+    let content = close.parentElement
+    const project = content.dataset.project
+    const slide = document.querySelector(`[data-for=${project}`)
 
-  let logoContainer = slide.querySelector(".img")
-  let bounds = logoContainer.getBoundingClientRect()
+    let logoContainer = slide.querySelector(".img")
+    let bounds = logoContainer.getBoundingClientRect()
 
-  content.style.height = bounds.height.toString() + "px"
-  content.style.width = bounds.width.toString() + "px"
-  content.style.overflowY = 'hidden'
-  content.classList.add('fade-out')
+    content.style.height = bounds.height.toString() + "px"
+    content.style.width = bounds.width.toString() + "px"
+    content.style.overflowY = 'hidden'
+    content.classList.add('fade-out')
 
-  $(content).animate({
-    "left": bounds.left.toString() + "px",
-    "top": bounds.top.toString() + "px",
-  }, 400, function() {
-    content.classList.remove('active')
-    $(content).removeAttr('style')
-    document.querySelector('body').style['overflow-y'] = 'scroll'
-    content.classList.remove('fade-out')
-    content.classList.add('open-transition')
-    content.classList.remove('close-transition')
-    content.classList.add('invisible')
-  })
+    const openUI = content.animate({
+      left: bounds.left.toString() + "px",
+      top: bounds.top.toString() + "px"
+    }, { easing: "cubic-bezier(0.42, 0, 0.58, 1)", duration: 400, iterations: 1, })
+    openUI.onfinish = function() {
+      content.style.left = bounds.left.toString() + "px"
+      content.style.top = bounds.top.toString() + "px"
+      content.classList.remove('active')
+      content.removeAttribute('style');
+      document.querySelector('body').style['overflow-y'] = 'scroll'
+      content.classList.remove('fade-out')
+      content.classList.add('open-transition')
+      content.classList.remove('close-transition')
+      content.classList.add('invisible')
+    };
+  });
 });
 
-$(document).on('click', '#hamburger', function() {
-  $('#hamburger-menu, #backdrop').toggleClass('active')
-})
+function toggleHamburger() {
+  document.querySelector('#backdrop').classList.toggle('active')
+  document.querySelector('#hamburger-menu').classList.toggle('active')
+};
 
-$(document).on('click', '#hamburger-menu svg, #hamburger-menu a', function() {
-  $('#hamburger-menu, #backdrop').toggleClass('active')
-})
+document.querySelector('#hamburger').addEventListener('click', toggleHamburger)
+document.querySelector('#hamburger-menu svg').addEventListener('click', toggleHamburger)
+document.querySelector('#hamburger-menu a').addEventListener('click', toggleHamburger)
 
-$(document).one('focus.expand', 'textarea.expand', function() {
-  var savedValue = this.value;
-  this.value = '';
-  this.baseScrollHeight = this.scrollHeight;
-  this.value = savedValue;
-}).on('input.expand', 'textarea.expand', function() {
-  var minRows = this.dataset.minRows | 0;
-  var rows = void 0;
-  this.rows = minRows;
-  if (this.baseScrollHeight == undefined) {
-    $(this).trigger('focus');
-  }
-  rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 18);
-  this.rows = minRows + rows;
+document.querySelector('textarea').addEventListener('input', function() {
+  this.parentNode.dataset.replicatedValue = this.value
 });
