@@ -1,0 +1,4 @@
+- Migrated legacy apps to the latest version Ruby and Rails.
+- Performed technical phone screenings for prospective candidates.
+- Focused on improving the performance of backend Rails API through various techniques as eager loading  and caching. Reduced average response time by over 100% which ended up cutting the amount of servers required in half.
+- Member of the team that launched wallpaper and home goods product types.  Refactored cart processing of the e-commerce side of site to handle different product types.
