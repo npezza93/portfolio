@@ -1,4 +1,6 @@
-- Migrated legacy apps to the latest version Ruby and Rails.
+- Improved and resolved performance bottlenecks of a Rails API by using various techniques such as caching, removing n+1 queries, and refactorings which resulted in the average response time being reduced by an order of magnitude.
+- Led a team that refactored cart processing and order architecture in a Rails API to accommodate the launch of new product categories in the marketplace.
+- Consulted with project managers for feasibility to implement requested features to meet project deadlines.
+- Reviewed, merged, tested, and deployed code changes for a Rails 6 API and a Rails 3 application.
+- Investigated and resolved bug tickets from customers for a Rails 6 API and a Rails 3 application.
 - Performed technical phone screenings for prospective candidates.
-- Focused on improving the performance of backend Rails API through various techniques as eager loading  and caching. Reduced average response time by over 100% which ended up cutting the amount of servers required in half.
-- Member of the team that launched wallpaper and home goods product types.  Refactored cart processing of the e-commerce side of site to handle different product types.
